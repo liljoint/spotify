@@ -1,0 +1,27 @@
+{
+  "name": "spotify",
+  "version": "1.0.0",
+  "description": "Spotify api connect and ask for info",
+  "main": "src/server.js",
+  "scripts": {
+    "lint": "eslint src --fix",
+    "start": "NODE_PATH=./src node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "spotify"
+  ],
+  "author": "Bryan Echegoyen",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.8",
+    "node-spotify-api": "^1.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}

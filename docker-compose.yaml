@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+  mongo-spotify:
+    restart: always
+    image: mongo:3.4
+    container_name: mongo-spotify
+    volumes:
+      - ./mongo_data:/data/db
+    ports:
+      - 27017:27017
+    networks:
+      - mynet
+  app:
+    build: .
+    restart: always
+    container_name: spotify
+    ports:
+      - 3001:3001
+    expose:
+      - 3001
+    depends_on:
+      - mongo-spotify
+    networks:
+      - mynet
+    volumes:
+      - /usr/share/zoneinfo/America/Santiago:/etc/localtime
+networks:
+  mynet:
+    name: mynet
+    driver: bridge
+volumes:
+  mongo_data:
